@@ -11,8 +11,10 @@ app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(session({ secret: config.secret, resave: false, saveUninitialized: true }));
+
 //routes
 app.use('/login', require('./controllers/login.controller'));
+app.use('/register', require('./controllers/register.controller'));
 app.use('/app', require('./controllers/app.controller'))
 
 // make '/app' default route
